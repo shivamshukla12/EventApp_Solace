@@ -21,6 +21,13 @@ service EventApp {
     STATUS   : String;
     LATTITUDE : String;
     LONGITUDE :String;
+    MODE      : String;
+    SHIPPERNAME: String;
+    SHIPPERADDRESS:String;
+    CITY: String;
+    STATE: String;
+    ZIPCODE: String
+
   }
 
 }
