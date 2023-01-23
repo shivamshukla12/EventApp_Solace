@@ -1,0 +1,61 @@
+{
+  "name": "EventApp",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/core": "^1.54.2",
+    "@sap-cloud-sdk/http-client": "^2.9.0",
+    "@sap/cds": "^6.2.3",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.9.10",
+    "@sap/hana-client": "^2.14.23",
+    "@sap/xb-msg-amqp-v100": "^0.9.58",
+    "express": "^4",
+    "passport": "^0.6.0",
+    "querystring": "^0.2.1"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.4"
+  },
+  "scripts": {
+    "start": "cds run"
+  },
+  "engines": {
+    "node": "^16.15"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "requires": {
+      "plan": {
+        "kind": "odata-v2",
+        "model": "srv/external/plan"
+      }
+    }
+  }
+}
