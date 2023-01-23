@@ -45,7 +45,7 @@ module.exports = function () {
         UID: "DBADMIN",
         PWD: "sparta@123A",
       };
-      let sql = `SELECT * FROM FEDEX_SHIP;`;
+      let sql = `SELECT * FROM FEDEX_SHIP ORDER BY ID DESC;`;
       var connection = hana.createConnection();
       connection.connect(connOptions);
       var t0 = performance.now();
