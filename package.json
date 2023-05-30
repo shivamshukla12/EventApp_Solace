@@ -10,11 +10,12 @@
     "@sap-cloud-sdk/http-client": "^2.9.0",
     "@sap/cds": "^6.2.3",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.10",
-    "@sap/hana-client": "^2.14.23",
     "@sap/xb-msg-amqp-v100": "^0.9.58",
     "express": "^4",
     "passport": "^0.6.0",
-    "querystring": "^0.2.1"
+    "querystring": "^0.2.1",
+    "@sap/hdi-deploy": "4.1.0",
+    "hdb": "^0.19.0"
   },
   "devDependencies": {
     "sqlite3": "^5.0.4"
@@ -51,10 +52,16 @@
     }
   },
   "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
     "requires": {
       "plan": {
         "kind": "odata-v2",
         "model": "srv/external/plan"
+      },
+      "db": {
+        "kind": "hana"
       }
     }
   }
