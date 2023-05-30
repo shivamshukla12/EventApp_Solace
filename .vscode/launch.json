@@ -10,13 +10,35 @@
       "request": "launch",
       "type": "node-terminal"
     },
-
     {
       "command": "cds run --with-mocks --in-memory?",
       "name": "cds run",
       "request": "launch",
       "type": "node-terminal",
-      "skipFiles": [ "<node_internals>/**" ]
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    },
+    {
+      "name": "Run EventApp_Solace-1",
+      "request": "launch",
+      "type": "node",
+      "cwd": "${workspaceFolder}",
+      "runtimeExecutable": "cds",
+      "args": [
+        "serve",
+        "--in-memory?"
+      ],
+      "console": "internalConsole",
+      "internalConsoleOptions": "openOnSessionStart",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "envFile": "${workspaceFolder}/.env1",
+      "env": {
+        "NODE_ENV": "development",
+        "run.config": "{\"handlerId\":\"cap_run_config_handler_id\",\"runnableId\":\"{\\\"projectPath\\\":\\\"/home/user/projects/EventApp_Solace\\\",\\\"profileName\\\":\\\"development\\\"}\"}"
+      }
     }
   ]
 }

@@ -34,27 +34,27 @@ module.exports = function () {
         req.reject(400, error.message)
     }
   });
-  this.on("READ", "Fedex", async (req) => {
-    // const srv =await cds.connect.to("messaging");
-    res = [];
-    // let { auditlogrecords } = srv.entities;
-    try {
-      var connOptions = {
-        serverNode:
-          "e3a8e848-d48f-472d-91e9-555d630aff17.hana.trial-us10.hanacloud.ondemand.com:443",
-        UID: "DBADMIN",
-        PWD: "sparta@123A",
-      };
-      let sql = `SELECT * FROM FEDEX_SHIP ORDER BY ID DESC;`;
-      var connection = hana.createConnection();
-      connection.connect(connOptions);
-      var t0 = performance.now();
-      var result = "";
-      var result = connection.exec(sql);
-     return result;
-  }
-  catch (error) {
-      req.reject(400, error.message)
-  }
-});
+//   this.on("READ", "Fedex", async (req) => {
+//     // const srv =await cds.connect.to("messaging");
+//     res = [];
+//     // let { auditlogrecords } = srv.entities;
+//     try {
+//       var connOptions = {
+//         serverNode:
+//           "e3a8e848-d48f-472d-91e9-555d630aff17.hana.trial-us10.hanacloud.ondemand.com:443",
+//         UID: "DBADMIN",
+//         PWD: "sparta@123A",
+//       };
+//       let sql = `SELECT * FROM Fedex ORDER BY ID DESC;`;
+//       var connection = hana.createConnection();
+//       connection.connect(connOptions);
+//       var t0 = performance.now();
+//       var result = "";
+//       var result = connection.exec(sql);
+//      return result;
+//   }
+//   catch (error) {
+//       req.reject(400, error.message)
+//   }
+// });
 };

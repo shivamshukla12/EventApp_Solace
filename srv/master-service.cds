@@ -29,5 +29,6 @@ service EventApp {
     ZIPCODE: String
 
   }
+ 
 
 }
